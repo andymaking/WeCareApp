@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginHorizontal="16dp"
+    tools:context=".ui.home.report.pearsonalCare.PersonalCareFragment">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginBottom="20dp"
+    android:layout_height="50dp">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/goBackButton"
+        android:layout_width="38dp"
+        android:layout_margin="5dp"
+        android:layout_height="38dp"
+        android:paddingStart="10dp"
+        android:src="@drawable/arrow_back"
+        android:elevation="5dp"
+        android:background="@drawable/background"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_height="50dp"
+        android:textSize="18sp"
+        android:text="Personal Care"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
+
+</LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:elevation="5dp"
+            android:background="@drawable/background"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:text="Personal Care"
+                    android:layout_height="wrap_content"/>
+
+                <RadioGroup
+                    android:id="@+id/pCare"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/pc_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:onClick="onRadioButtonClicked1"/>
+                    <RadioButton android:id="@+id/pc_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:onClick="onRadioButtonClicked1"/>
+                    <RadioButton android:id="@+id/pc_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Refused"
+                        android:onClick="onRadioButtonClicked1"/>
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:text="Type"
+                    android:layout_height="wrap_content"/>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/typeShower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shower"
+                        android:onClick="onRadioButtonClicked2"/>
+                    <RadioButton android:id="@+id/typeWash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wash"
+                        android:onClick="onRadioButtonClicked2"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:text="Change Of Cloths"
+                    android:layout_height="wrap_content"/>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/cloth_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:onClick="onRadioButtonClicked3"/>
+                    <RadioButton android:id="@+id/cloth_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:onClick="onRadioButtonClicked3"/>
+                    <RadioButton android:id="@+id/cloth_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Refused"
+                        android:onClick="onRadioButtonClicked3"/>
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:text="Oral Hygeine"
+                    android:layout_height="wrap_content"/>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/oral_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:onClick="onRadioButtonClicked4"/>
+                    <RadioButton android:id="@+id/oral_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:onClick="onRadioButtonClicked4"/>
+                    <RadioButton android:id="@+id/oral_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Refuse"
+                        android:onClick="onRadioButtonClicked4"/>
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:text="Change Bedding"
+                    android:layout_height="wrap_content"/>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/bed_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:onClick="onRadioButtonClicked5"/>
+                    <RadioButton android:id="@+id/bed_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:onClick="onRadioButtonClicked5"/>
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:text="Catheter Care"
+                    android:layout_height="wrap_content"/>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/eat_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:onClick="onRadioButtonClicked6"/>
+                    <RadioButton android:id="@+id/eat_n"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:onClick="onRadioButtonClicked6"/>
+                </RadioGroup>
+
+            </LinearLayout>
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="10dp"
+                android:paddingLeft="1dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="Comment"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/comments"
+                    android:layout_width="match_parent"
+                    android:gravity="top"
+                    android:layout_height="match_parent"
+                    android:hint="comment" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_button"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="sans-serif-black"
+                android:text="SAVE"
+                android:textAllCaps="false"
+                app:cornerRadius="10dp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

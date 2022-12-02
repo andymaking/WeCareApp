@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="io.king.wecareapp.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_residentFragment"
+            app:destination="@id/residentFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="io.king.wecareapp.ui.home.proflie.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/residentFragment"
+        android:name="io.king.wecareapp.ui.home.residents.ResidentFragment"
+        android:label="fragment_resident"
+        tools:layout="@layout/fragment_resident" >
+        <action
+            android:id="@+id/action_residentFragment_to_residentDetailFragment"
+            app:destination="@id/residentDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/residentDetailFragment"
+        android:name="io.king.wecareapp.ui.home.residents.resDetail.ResidentDetailFragment"
+        android:label="fragment_resident_detail"
+        tools:layout="@layout/fragment_resident_detail" >
+        <argument
+            android:name="residents"
+            app:argType="io.king.wecareapp.data.dummy.Resdents" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="io.king.wecareapp.ui.home.report.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_reportFragment_to_nightTimeFragment"
+            app:destination="@id/nightTimeFragment" />
+        <action
+            android:id="@+id/action_reportFragment_to_safetyFragment"
+            app:destination="@id/safetyFragment" />
+        <action
+            android:id="@+id/action_reportFragment_to_medicationFragment"
+            app:destination="@id/medicationFragment" />
+        <action
+            android:id="@+id/action_reportFragment_to_toiletFragment"
+            app:destination="@id/toiletFragment" />
+        <action
+            android:id="@+id/action_reportFragment_to_foodDrinkFragment"
+            app:destination="@id/foodDrinkFragment" />
+        <action
+            android:id="@+id/action_reportFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_reportFragment_to_personalCareFragment"
+            app:destination="@id/personalCareFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="io.king.wecareapp.ui.home.report.activity.ActivityFragment"
+        android:label="fragment_activity"
+        tools:layout="@layout/fragment_activity" />
+    <fragment
+        android:id="@+id/foodDrinkFragment"
+        android:name="io.king.wecareapp.ui.home.report.food_drink.FoodDrinkFragment"
+        android:label="fragment_food_drink"
+        tools:layout="@layout/fragment_food_drink" />
+    <fragment
+        android:id="@+id/medicationFragment"
+        android:name="io.king.wecareapp.ui.home.report.medication.MedicationFragment"
+        android:label="fragment_medication"
+        tools:layout="@layout/fragment_medication" />
+    <fragment
+        android:id="@+id/nightTimeFragment"
+        android:name="io.king.wecareapp.ui.home.report.night.NightTimeFragment"
+        android:label="fragment_night_time"
+        tools:layout="@layout/fragment_night_time" />
+    <fragment
+        android:id="@+id/personalCareFragment"
+        android:name="io.king.wecareapp.ui.home.report.pearsonalCare.PersonalCareFragment"
+        android:label="fragment_personal_care"
+        tools:layout="@layout/fragment_personal_care" />
+    <fragment
+        android:id="@+id/safetyFragment"
+        android:name="io.king.wecareapp.ui.home.report.safety.SafetyFragment"
+        android:label="fragment_safety"
+        tools:layout="@layout/fragment_safety" />
+    <fragment
+        android:id="@+id/toiletFragment"
+        android:name="io.king.wecareapp.ui.home.report.toilet.ToiletFragment"
+        android:label="fragment_toilet"
+        tools:layout="@layout/fragment_toilet" />
+</navigation>

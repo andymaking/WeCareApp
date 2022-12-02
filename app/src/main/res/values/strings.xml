@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WeCare App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_account">Don’t have any account? Sign Up here</string>
+    <string name="assessment1">communicating with others. He has capacity to make all decisions, and has clear</string>
+    <string name="assessment2">express his needs. Peter likes to be able to make his own decisions and choices. Sometimes</string>
+    <string name="assessment3">Katherine has no issues with communication, or communicating with others. He has capacity to make all decisions, and has clear understanding.</string>
+    <string name="comment1">Unfortunately, theres no clean way of initializing an ArrayList in Java, so I wondered if Kotlin had improved on that issue. For reference, heres what I </string>
+    <string name="comment2">There are two ways to define an array in Kotlin. Using the arrayOf () function - We can use the library function arrayOf () to create an array by passing the values of the elements to the function. Syntax:</string>
+    <string name="comment3">Katherine is able to communicate verbally and express his needs. Peter likes to be able to make his own decisions and choices. Sometimes Peter struggles remembering things, so he likes to use a notepad and pen to write things down.</string>
+</resources>

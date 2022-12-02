@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_marginHorizontal="16dp"
+    tools:context=".ui.home.residents.resDetail.ResidentDetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_height="50dp">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/goBackButton"
+            android:layout_width="38dp"
+            android:layout_margin="5dp"
+            android:layout_height="38dp"
+            android:paddingStart="10dp"
+            android:src="@drawable/arrow_back"
+            android:elevation="5dp"
+            android:background="@drawable/background"
+            app:cornerRadius="30dp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_height="50dp"
+            android:textSize="18sp"
+            android:text="Resident Care Plan"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:elevation="5dp"
+        android:background="@drawable/background"
+        android:layout_margin="5dp"
+        android:layout_height="220dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/residentsPic"
+            app:shapeAppearanceOverlay="@style/RoundedCorner"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:src="@drawable/profile22"
+            android:scaleType="centerCrop"
+            android:background="@drawable/background"
+            android:clipToOutline="true"
+            android:layout_height="match_parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:paddingLeft="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="username:"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/profileUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="Jake Raves"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sessions"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/profileSession"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="8"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="clock circles"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/profileClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="6"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:elevation="5dp"
+        android:background="@drawable/background"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleTwo"
+            android:layout_width="match_parent"
+            android:layout_marginVertical="5dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>
