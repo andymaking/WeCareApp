@@ -48,12 +48,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding, UserReposi
 
         lifecycleScope.launch {
 
-            val db = Room.databaseBuilder(
-                requireContext(), UserDataBase::class.java,
-                "user"
-            ).build()
-
-            users = db.dao.getUser()
+            users = room.dao.getUser()
             binding.textView.text = "Hello, ${users[0].name}"
             id = users[0]._id
         }

@@ -20,6 +20,7 @@ import kotlinx.coroutines.launch
 abstract class BaseFragment <VM: ViewModel, B: ViewBinding, R: BaseRepository> : Fragment() {
 
     protected lateinit var userPreferences: UserPreferences
+    protected lateinit var room: UserDataBase
     protected lateinit var binding: B
     protected lateinit var viewModel : VM
     protected val remoteDataSource = RemoteDataSource()
@@ -29,6 +30,7 @@ abstract class BaseFragment <VM: ViewModel, B: ViewBinding, R: BaseRepository> :
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        room = Room.databaseBuilder(requireContext(), UserDataBase::class.java, "user").build()
         userPreferences = UserPreferences(requireContext())
         binding = getFragmentBinding(inflater, container)
         val factory = ViewModelFactory(getFragmentRepository())

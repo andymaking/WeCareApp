@@ -31,12 +31,7 @@ class ProfileFragment : BaseFragment<ProfileViewModel, FragmentProfileBinding, U
 
         lifecycleScope.launch {
 
-            val db = Room.databaseBuilder(
-                requireContext(), UserDataBase::class.java,
-                "user"
-            ).build()
-
-            users = db.dao.getUser()
+            users = room.dao.getUser()
             binding.profileUsername.text = users[0].name
             binding.profileAddress.text = users[0].address
             binding.profileEmail.text = users[0].email

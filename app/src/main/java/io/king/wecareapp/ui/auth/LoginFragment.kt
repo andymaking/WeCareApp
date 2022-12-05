@@ -39,17 +39,13 @@ class LoginFragment: BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepos
         binding.loginButton.enable(false)
 
         viewModel.loginResponse.observe(viewLifecycleOwner, Observer {
-            val db = Room.databaseBuilder(
-                requireContext(), UserDataBase::class.java,
-                "user"
-            ).build()
             
             when(it){
                 is Resource.Success -> {
                     binding.progressBar.visible(false)
                     viewModel.saveAuthToken(it.value.data.token)
                     lifecycleScope.launch{
-                        db.dao.insertUser(it.value.data.user)
+                        room.dao.insertUser(it.value.data.user)
                     }
                     Toast.makeText(requireContext(), it.value.message, Toast.LENGTH_LONG).show()
                     requireActivity().starttNewActivity(HomeActivity::class.java)
