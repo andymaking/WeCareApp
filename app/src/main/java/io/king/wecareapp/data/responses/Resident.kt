@@ -1,16 +1,10 @@
 package io.king.wecareapp.data.responses
 
-data class GetResidentsResponse(
-    val `data`: Datas,
-    val message: String,
-    val success: Boolean
-)
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-data class Datas(
-    val residents: List<Residentz>
-)
-
-data class Residentz(
+@Parcelize
+data class Resident(
     val __v: Int,
     val _id: String,
     val address: String,
@@ -21,9 +15,10 @@ data class Residentz(
     val dateCreated: String,
     val dateModified: String,
     val gender: String,
-    val licenseNo: String,
+    val media: String,
     val name: String,
     val phone: String,
     val role: String,
-    val updatedAt: String
-)
+    val updatedAt: String,
+    val zipCode: String
+): Parcelable

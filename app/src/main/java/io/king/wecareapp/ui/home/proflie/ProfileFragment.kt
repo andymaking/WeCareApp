@@ -16,9 +16,10 @@ import io.king.wecareapp.data.room.UserDataBase
 import io.king.wecareapp.databinding.FragmentProfileBinding
 import io.king.wecareapp.ui.base.BaseFragment
 import io.king.wecareapp.ui.enable
+import io.king.wecareapp.ui.home.HomeViewModel
 import kotlinx.coroutines.launch
 
-class ProfileFragment : BaseFragment<ProfileViewModel, FragmentProfileBinding, UserRepository>() {
+class ProfileFragment : BaseFragment<HomeViewModel, FragmentProfileBinding, UserRepository>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -43,7 +44,7 @@ class ProfileFragment : BaseFragment<ProfileViewModel, FragmentProfileBinding, U
 
     }
 
-    override fun getViewModel() = ProfileViewModel::class.java
+    override fun getViewModel() = HomeViewModel::class.java
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,

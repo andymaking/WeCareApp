@@ -1,6 +1,5 @@
 package io.king.wecareapp.data.network
 
-import io.king.wecareapp.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -8,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RemoteDataSource{
     companion object{
-        private const val BASE_URL = "https://nu-carer-api.herokuapp.com/api/"
+        private const val BASE_URL = "https://wecare-api.onrender.com/api/"
     }
 
     fun<API> buildApi(
