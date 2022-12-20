@@ -47,11 +47,13 @@ class LoginFragment: BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepos
                     lifecycleScope.launch{
                         room.dao.insertUser(it.value.data.user)
                     }
+                    binding.loginButton.enable(true)
                     Toast.makeText(requireContext(), it.value.message, Toast.LENGTH_LONG).show()
                     requireActivity().starttNewActivity(HomeActivity::class.java)
                 }
                 is Resource.Failure -> {
                     binding.progressBar.visible(false)
+                    binding.loginButton.enable(true)
                     Toast.makeText(requireContext(), "Login failure", Toast.LENGTH_LONG).show()
                 }
                 is Resource.Loading ->{
@@ -66,6 +68,7 @@ class LoginFragment: BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepos
         }
 
         binding.loginButton.setOnClickListener {
+            binding.loginButton.enable(false)
             val email = binding.loginUsername.text.toString().trim()
             val password = binding.loginPassword.text.toString().trim()
 

@@ -16,7 +16,17 @@ import io.king.wecareapp.ui.base.BaseFragment
 class PersonalCareFragment : BaseFragment<PersonalCareViewModel, FragmentPersonalCareBinding, UserRepository>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        var radioGroup: RadioGroup? = null
+        lateinit var radioButton: RadioButton
         super.onActivityCreated(savedInstanceState)
+
+        radioGroup = binding.pCare
+
+        radioGroup.setOnClickListener{
+            val selectedOption: Int = radioGroup.checkedRadioButtonId
+            radioButton= radioGroup.findViewById(selectedOption)
+            print(radioButton.id)
+        }
 
 
         fun checked(main: RadioButton, a:RadioButton, b: RadioButton){
@@ -24,8 +34,6 @@ class PersonalCareFragment : BaseFragment<PersonalCareViewModel, FragmentPersona
             a.isChecked=false
             b.isChecked=false
         }
-
-
 
 
         binding.goBackButton.setOnClickListener{

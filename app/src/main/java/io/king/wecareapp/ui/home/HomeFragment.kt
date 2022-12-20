@@ -33,6 +33,15 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding, UserReposi
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        var users: List<User>
+        var id: String
+        lifecycleScope.launch {
+            users = room.dao.getUser()
+            binding.textView.text = "Hello, ${users[0].name}"
+            viewModel.id = "${users[0]._id}"
+        }
+
+
         binding.myProfile.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
         }
@@ -43,15 +52,25 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding, UserReposi
             findNavController().navigate(R.id.action_homeFragment_to_reportFragment)
         }
 
-        var users: List<User>
-        var id: String = ""
+        viewModel.getAssignedResidents.observe(viewLifecycleOwner, Observer {
 
-        lifecycleScope.launch {
-
-            users = room.dao.getUser()
-            binding.textView.text = "Hello, ${users[0].name}"
-            id = users[0]._id
-        }
+            when(it){
+                is Resource.Success -> {
+                    lifecycleScope.launch{
+                        print(it)
+                    }
+                    Toast.makeText(requireContext(), it.value.message, Toast.LENGTH_LONG).show()
+                    requireActivity().starttNewActivity(HomeActivity::class.java)
+                }
+                is Resource.Failure -> {
+                    print(it)
+//                    Toast.makeText(requireContext(), "Login failure", Toast.LENGTH_LONG).show()
+                }
+                is Resource.Loading ->{
+                    print(it)
+                }
+            }
+        })
 
     }
 

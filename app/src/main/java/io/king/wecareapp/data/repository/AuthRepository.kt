@@ -15,6 +15,7 @@ class AuthRepository(
     ) = safeApiCall {
         api.login(email, password)
     }
+
     suspend fun signUp(
         email: String,
         password: String,
